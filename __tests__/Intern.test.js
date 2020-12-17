@@ -1,21 +1,21 @@
 const Intern = require('../lib/Intern.js');
 
-test('creates an Engineer object', () => {
-    const intern = new Intern ('jack',3,"jack@gmail.com","engineer","jackgit1");
-    expect(intern.name).toBe('jack');
-    expect(intern.id).toBe(2);
-    expect(intern.email).toBe('jack@gmail.com');
-    expect(intern.githubUser).toBe('jackgit1');
+test('creates an Intern object', () => {
+    const intern = new Intern ('jake',3,"jake@gmail.com","intern","ucla");
+    expect(intern.name).toBe('jake');
+    expect(intern.id).toBe(3);
+    expect(intern.email).toBe('jake@gmail.com');
+    expect(intern.school).toBe('ucla');
 });
 
-test("gets intern's github username", () => {
-    const intern = new Intern('jack',2,"jack@gmail.com","intern","jackgit1");
+test("gets intern's school", () => {
+    const intern = new Intern('jake',3,"jake@gmail.com","intern","ucla");
 
-    expect(intern.getGithub()).toBe("jackgit1");
+    expect(intern.getSchool()).toBe("ucla");
 });
 
 test("gets employee role", () => {
-    const intern = new Intern('jack',2,"jack@gmail.com","intern","jackgit1");
+    const intern = new Intern('jake',3,"jake@gmail.com","intern","ucla");
 
-    expect(intern.getRole()).toBe("engineer");
+    expect(intern.getRole()).toBe("intern");
 });
