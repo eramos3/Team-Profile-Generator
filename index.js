@@ -126,14 +126,14 @@ const addEmployee = () => {
             if (employeeData.confirmAddEmployee) {
                 return addEmployee(employeeData);
             } else {
-                return employeeData;
+                return employees;
             }
         })
 };
 
 addEmployee()
-    .then(employeeData =>{
-        return htmlTemplate(employeeData);
+    .then(employees =>{
+        return htmlTemplate(employees);
     })
     .catch(err => {
         console.log(err);

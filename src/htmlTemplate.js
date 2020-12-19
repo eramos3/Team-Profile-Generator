@@ -1,6 +1,13 @@
 module.exports = templateData => {
-    console.log(templateData)
-const { name} = templateData;
+    // const (Object.keys()) = templateData;
+    // console.log(templateData)
+    // for (i=0; i < templateData.length; i++){
+    //     Object.keys(templateData).forEach(() =>{console.log(i)});
+    // // }
+    
+    for(const [key,value] of Object.entries(templateData)){
+        console.log(`${key}: ${value}}`);
+    }
 
     
 };
