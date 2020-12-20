@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
-const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const htmlTemplate = require('./src/htmlTemplate');
+const handleRender = require('./src/htmlTemplate');
+const writeToFile = require('./src/genHtml');
+
 
 
 const employees = [];
@@ -133,7 +134,10 @@ const addEmployee = () => {
 
 addEmployee()
     .then(employees =>{
-        return htmlTemplate(employees);
+        return handleRender(employees);
+    })
+    .then(pageHTML => {
+        return writeToFile(pageHTML);
     })
     .catch(err => {
         console.log(err);
