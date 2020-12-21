@@ -1,20 +1,14 @@
-
-// for (i=0; i < templateData.length; i++){
-// Object.keys(templateData);
-// // }
-// const (Object.keys()) = templateData;
-
-const genTemplate = templateData => {
+// function that makes card for each employee
+const genCard = templateData => {
     console.log(templateData)
 
     // goes through every array element and saves it to card
     let card = " ";
     for (i = 0; i < templateData.length; i++) {
-        console.log(templateData.length)
         // to isolate last property of each class 
         let objProp = templateData[i].officeNum || templateData[i].school || templateData[i].githubUser;
         let objKey = Object.keys(templateData[i]);
-        let uniqueProp = objKey[4] + ": " + objProp
+        let uniqueProp = objKey[4] + ": " + objProp;
         if (objKey[4] === "githubUser") {
             uniqueProp = (`Github: <a target = "_blank" href = 'https://github.com/${templateData[i].githubUser}'>${templateData[i].githubUser}</a>`);
         } else if (objKey[4] === "officeNum"){
@@ -38,12 +32,12 @@ const genTemplate = templateData => {
                     </ul>
                 </div>
             </div> 
-            `        
+            `;    
     }
     return card;
 
 };
-
+// function that writes html page
 const handleRender = templateData =>{
     return `
         <!DOCTYPE html>
@@ -67,7 +61,7 @@ const handleRender = templateData =>{
         <main class="container mt-5">
             <div>
                 <div class="row">
-                    ${genTemplate(templateData)}
+                    ${genCard(templateData)}
                 </div>
             </div>
         </main>
@@ -76,11 +70,5 @@ const handleRender = templateData =>{
         </html>
         `;
 }
-
-  // console.log(objProp);
-    // console.log(objKey[2]);
-    // for(const [key,value] of Object.entries(templateData)){
-    //     console.log(`${key}: ${value}}`);
-    // }
 
 module.exports =  handleRender;

@@ -6,7 +6,7 @@ const handleRender = require('./src/htmlTemplate');
 const writeToFile = require('./src/genHtml');
 
 
-
+// array to store employees
 const employees = [];
 const questions = [
     {
@@ -103,7 +103,7 @@ const questions = [
         default: false
     }
 ];
-
+// function to create employee based on role
 const employeeObj = data => {
     switch (data.role) {
         case "Manager":
@@ -114,7 +114,7 @@ const employeeObj = data => {
             return new Intern(data.name, data.id, data.email, data.role, data.school);
     }
 };
-
+// function to add employees
 const addEmployee = () => {
     console.log(`
       =================
@@ -132,6 +132,7 @@ const addEmployee = () => {
         })
 };
 
+// calls functions to write program
 addEmployee()
     .then(employees =>{
         return handleRender(employees);
@@ -142,7 +143,3 @@ addEmployee()
     .catch(err => {
         console.log(err);
     });
-
-
-    
-    
