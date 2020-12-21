@@ -24,4 +24,4 @@ THEN I exit the application, and the HTML is generated<br>
 ```
 git clone git@github.com:eramos3/Team-Profile-Generator.git
 ```
-<!-- [working deployed link recording](https://drive.google.com/file/d/1RpYBjVj8bhZoO9JfCRT34UKCOWMHLeYQ/view) -->
+[working deployed link recording](https://drive.google.com/file/d/1RpYBjVj8bhZoO9JfCRT34UKCOWMHLeYQ/view)
